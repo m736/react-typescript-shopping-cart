@@ -1,6 +1,6 @@
-import React from "react";
+
 import { usetheme } from "../context/ThemeContext";
-import Card from "../components/Card";
+
 import { products } from "../data/products";
 import ProductCard from "../components/ProductCard";
 

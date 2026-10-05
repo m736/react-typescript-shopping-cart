@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import  { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { usetheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
