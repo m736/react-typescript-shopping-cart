@@ -1,75 +1,123 @@
-# React + TypeScript + Vite
+# 🛒 Shopping Cart Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive shopping cart application built with **React, TypeScript, and Tailwind CSS**. The project demonstrates React state management, routing, authentication, reusable components, and automated testing.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Product listing
+- Add products to cart
+- Increase and decrease product quantity
+- Remove products from cart
+- Prevent duplicate cart items by increasing quantity
+- Automatic cart total calculation
+- Cart item count in the Navbar
+- Theme switching using Context API
+- Authentication state management
+- Protected routes
+- Local storage persistence
+- Responsive UI
+- Unit testing with Vitest
+- Component testing with React Testing Library
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- Context API
+- useReducer
+- Vitest
+- React Testing Library
+- Git & GitHub
+- Vite
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+├── context/
+├── data/
+├── pages/
+├── types/
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧠 State Management
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The application uses **Context API and useReducer** for managing shopping cart state.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The cart supports:
 
+- Adding products
+- Increasing quantity
+- Decreasing quantity
+- Removing products
+- Calculating the cart total
+
+## 🧪 Testing
+
+Automated tests were written using:
+
+- **Vitest** – test runner
+- **React Testing Library** – React component testing
+- **Testing Library User Event** – user interaction testing
+- **jest-dom** – DOM assertions
+
+The project includes tests for cart reducer logic, ThemeContext, and ProductCard behavior.
+
+Run tests with:
+
+```bash
+npm test
 ```
+
+## 💻 Getting Started
+
+Clone the repository:
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+Navigate to the project:
+
+```bash
+cd YOUR_PROJECT_FOLDER
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the application in your browser.
+
+## 📌 What I Learned
+
+Through this project, I practiced:
+
+- Building reusable React components
+- TypeScript types and interfaces
+- React Router and protected routes
+- Context API
+- useReducer
+- State management
+- Local storage
+- Responsive design with Tailwind CSS
+- Unit and component testing
+- Git and GitHub workflow
+
+## 👩‍💻 Author
+
+**Megala Arasu**
+
+React Developer | React | TypeScript | JavaScript

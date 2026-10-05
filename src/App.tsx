@@ -12,10 +12,13 @@ import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import CartProvider from "./context/CartContext";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
     <div>
+      <CartProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -29,10 +32,13 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
+        
       </Routes>
+      </CartProvider>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { usetheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 // NavLink is used when the user clicks a link.
 const Navbar = () => {
   const { isLoggedIn, logout } = useAuth();
@@ -11,11 +12,16 @@ const Navbar = () => {
       ? "text-yellow-300 font-semibold"
       : "text-white hover:text-yellow-200";
   const { theme, toggleTheme } = usetheme();
-  const navigate=useNavigate()
-  const handleLogout=()=>{
+  const navigate = useNavigate();
+  const handleLogout = () => {
     logout();
-    navigate("/login")
-  }
+    navigate("/login");
+  };
+  const{cart}=useCart()
+ const cartCount = cart.reduce(
+  (total, item) => total + item.quantity,
+  0
+);
   return (
     <nav className="bg-blue-500 text-white px-6 py-6">
       <div className="flex justify-between items-center">
@@ -33,8 +39,16 @@ const Navbar = () => {
           <NavLink to="/contact" className={activeClass}>
             Contact
           </NavLink>
+          <NavLink to="/cart" className={activeClass}>
+           🛒 Cart ({cartCount})
+          </NavLink>
           {isLoggedIn ? (
-            <button className="bg-red-500 text-white px-3 py-1 rounded" onClick={handleLogout}>Logout</button>
+            <button
+              className="bg-red-500 text-white px-3 py-1 rounded"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           ) : (
             <NavLink to="/login" className={activeClass}>
               Login
@@ -68,7 +82,9 @@ const Navbar = () => {
           <NavLink to="/contact" onClick={() => setIsOpen(false)}>
             Contact
           </NavLink>
-
+          <NavLink to="/cart" className={activeClass}>
+            Cart
+          </NavLink>
           <button
             onClick={toggleTheme}
             className="bg-white text-blue-600 px-3 py-1 rounded w-fit"

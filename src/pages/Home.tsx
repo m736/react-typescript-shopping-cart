@@ -1,11 +1,13 @@
 import React from "react";
 import { usetheme } from "../context/ThemeContext";
 import Card from "../components/Card";
+import { products } from "../data/products";
+import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const { theme } = usetheme();
   return (
-    <div className=" space-y-6">
+    <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold">Home</h1>
         <p className="mt-6">
@@ -13,7 +15,7 @@ const Home = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card
+        {/* <Card
           title="React Router"
           description="Navigation between pages using nested routes."
         />
@@ -26,7 +28,10 @@ const Home = () => {
         <Card
           title="Tailwind CSS"
           description="Utility-first styling for responsive layouts."
-        />
+        /> */}
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product}></ProductCard>
+        ))}{" "}
       </div>
     </div>
   );
